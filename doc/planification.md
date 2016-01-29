@@ -55,7 +55,7 @@ Priorisation
 Planning Poker
 --------------
 
-|    Story     | Charge de trvl|
+|    Story     | Charge de travail|
 |     :---:    |     :---:     |
 |      1       |       0       |
 |      2       |       0.25    |
