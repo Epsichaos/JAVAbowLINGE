@@ -1,6 +1,8 @@
 Planification
 =============
 
+Ce document contient la méthodologie mise en oeuvre dans la séance de présentation du projet et de planification de sa réalisation.
+
 User Stories
 ------------
 
@@ -34,6 +36,8 @@ On classe les *user stories* dans le tableau suivant.
 Priorisation
 ------------
 
+On priorise toutes les story prises en compte sur une échelle de 1 à 100.
+
 |    Story     |   Priorité    |
 |     :---:    |      :---:    |
 |      1       |      100      |
@@ -55,7 +59,9 @@ Priorisation
 Planning Poker
 --------------
 
-|    Story     | Charge de travail|
+Ci-dessous l'estimation de la charge de travail en heures par story, classées par priorités décroissantes.
+
+|    Story     | Charge de travail (heures)|
 |     :---:    |     :---:     |
 |      1       |       0       |
 |      2       |       0.25    |
