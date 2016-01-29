@@ -30,8 +30,8 @@ On classe les *user stories* dans le tableau suivant.
 
 |                | Non satisfait  |         Neutre           |       Satisfait       |       
 |      :---:     |      :---:     |            :---:         |         :---:         |
-| Fctnté présente|       x        | 3,4,5,9,11,13            | 1,2,6,7,8,10,12,14,15 |
-| Fctnté absente |  1,2,3,4,7,8   | 5,6,9,10,11,12,13,14,15  |            x          |
+| Fonctionnalité présente|       x        | 3,4,5,9,11,13            | 1,2,6,7,8,10,12,14,15 |
+| Fonctionnalité absente |  1,2,3,4,7,8   | 5,6,9,10,11,12,13,14,15  |            x          |
 
 Priorisation
 ------------
