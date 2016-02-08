@@ -35,6 +35,10 @@ public class Player {
         return playerName;
     }
 
+    public List<Frame> getFrameList() {
+        return frameList;
+    }
+
     public void setFrame(int firstL, int secondL) {
         frameList.add(new Frame(firstL, secondL));
     }

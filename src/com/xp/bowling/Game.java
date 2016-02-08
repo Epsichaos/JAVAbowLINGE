@@ -45,8 +45,12 @@ public class Game {
         }
     }
 
-    public void setScoreFrame(Player player, int scoreFirstLaunch, int scoreSecondLaunch) {
-        player.frameList.add(new Frame(scoreFirstLaunch, scoreSecondLaunch));
+    public int getScore(Player player) {
+        int score = 0;
+        for(Frame frame : player.getFrameList()) {
+            score = score + frame.getFirstLaunch() + frame.getSecondLaunch();
+        }
+        return score;
     }
 
     public void playFrame(Player player, int frameNumber) {
