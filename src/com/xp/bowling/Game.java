@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.lang.Integer;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.xp.bowling.Player;
 
 /**
@@ -49,10 +50,18 @@ public class Game {
     }
 
     public int getScore(Player player) {
+        int i = 0;
         int score = 0;
+        Frame previousFrame = new Frame(0,0);
+        List<Frame> frameList = player.getFrameList();
+
+        //f frame.getFirstLaunch() == 10 isStrike = true
+        /*
         for(Frame frame : player.getFrameList()) {
             score = score + frame.getFirstLaunch() + frame.getSecondLaunch();
+
         }
+        */
         return score;
     }
 
@@ -79,18 +88,25 @@ public class Game {
             firstLaunchScore = sc.nextInt();
         } while(!isValid(firstLaunchScore));
 
-        do {
-            if(!isValid(secondLaunchScore)) {
-                System.out.println(" > Votre second lancer doit être entre 0 et 10 !");
-            }
-            if(!isValid(firstLaunchScore, secondLaunchScore)) {
-                System.out.println(" > La somme de vos deux lancers doit être entre 0 et 10 !");
-            }
-            System.out.println(" > Rentrez votre score pour le second lancer ...");
-            secondLaunchScore = sc.nextInt();
-        } while(!isValid(firstLaunchScore, secondLaunchScore) || !isValid(secondLaunchScore));
+        // if the first launch scores a strike
+        if(firstLaunchScore == 10) {
+            player.setFrame(10, 0);
+        }
 
-        player.setFrame(firstLaunchScore, secondLaunchScore);
+        // else
+        else {
+            do {
+                if(!isValid(secondLaunchScore)) {
+                    System.out.println(" > Votre second lancer doit être entre 0 et 10 !");
+                }
+                if(!isValid(firstLaunchScore, secondLaunchScore)) {
+                    System.out.println(" > La somme de vos deux lancers doit être entre 0 et 10 !");
+                }
+                System.out.println(" > Rentrez votre score pour le second lancer ...");
+                secondLaunchScore = sc.nextInt();
+            } while(!isValid(firstLaunchScore, secondLaunchScore) || !isValid(secondLaunchScore));
+            player.setFrame(firstLaunchScore, secondLaunchScore);
+        }
     }
 
 

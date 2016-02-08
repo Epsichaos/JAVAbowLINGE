@@ -12,7 +12,7 @@ public class MainGamingClass {
 
     public static void main(String[] args) {
 
-        // number of frames.
+        // number of frames
         // -> 2 for testing, 10 in real life
         int frame_number = 2;
 

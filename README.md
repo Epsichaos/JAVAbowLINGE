@@ -47,7 +47,7 @@ On priorise toutes les story prises en compte sur une échelle de 1 à 100.
 |      2       |       95      | En tant que joueur, je peux saisir mon score. |
 |      3       |       55      | En tant que joueur, je peux consulter mon score. |
 |      4       |       85      | En tant que joueur, je peux voir qui dois jouer. |
-|      5       |       40      | En tant que spectateur, je peux voir les scores de tous les joueurs. |
+|      5       |       40      | En tant que spectateur, je peux voir les scores de tous les joueurs. [inutile ?] |
 |      6       |       80      | En tant que joueur, je peux préciser le nombre de joueurs. |
 |      7       |       50      | En tant que joueur, je peux nommer les joueurs. |
 |      8       |       75      | En tant que joueur, je peux effectuer 2 lancers. |

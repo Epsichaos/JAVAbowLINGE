@@ -26,4 +26,22 @@ public class Frame {
     public void setSecondLaunch(int secondL) {
         secondLaunch = secondL;
     }
+
+    public Boolean isStrike() {
+        if(firstLaunch == 10) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public Boolean isSpare() {
+        if((firstLaunch + secondLaunch == 10)&& firstLaunch!=10) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
