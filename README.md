@@ -41,23 +41,23 @@ Priorisation
 
 On priorise toutes les story prises en compte sur une échelle de 1 à 100.
 
-|    Story     |   Priorité    |
-|     :---:    |      :---:    |
-|      1       |      100      |
-|      2       |       95      |
-|      3       |       55      |
-|      4       |       85      |
-|      5       |       40      |
-|      6       |       80      |
-|      7       |       50      |
-|      8       |       75      |
-|      9       |       30      |
-|     10       |       45      |
-|     11       |       70      |
-|     12       |       35      |
-|     13       |       37      |
-|     14       |       28      |
-|     15       |       25      |
+|    Story     |   Priorité    |  Description |
+|     :---:    |      :---:    | :---:
+|      1       |      100      | En tant que joueur, je peux créer une partie pour jouer. |
+|      2       |       95      | En tant que joueur, je peux saisir mon score. |
+|      3       |       55      | En tant que joueur, je peux consulter mon score. |
+|      4       |       85      | En tant que joueur, je peux voir qui dois jouer. |
+|      5       |       40      | En tant que spectateur, je peux voir les scores de tous les joueurs. |
+|      6       |       80      | En tant que joueur, je peux préciser le nombre de joueurs. |
+|      7       |       50      | En tant que joueur, je peux nommer les joueurs. |
+|      8       |       75      | En tant que joueur, je peux effectuer 2 lancers. |
+|      9       |       30      | En tant que joueur, je peux augmenter le score des 2 tours suivants en faisant en strike.|
+|     10       |       45      | En tant que joueur, je peux terminer la partie. |
+|     11       |       70      | En tant que joueur, je ne peux pas faire tomber plus de 10 quilles. |
+|     12       |       35      | En tant que joueur, je peux terminer mon tour au premier lancer en faisant un strike. |
+|     13       |       37      | En tant que joueur, je peux augmenter le score du tour suivant en faisant un spare. |
+|     14       |       28      | En tant que joueur, je peux gagner 1 lancer si je fais un spare au dernier tour. |
+|     15       |       25      | En tant que joueur, je peux gagner 2 lancers si je fais un strike au dernier tour. |
 
 Planning Poker
 --------------
