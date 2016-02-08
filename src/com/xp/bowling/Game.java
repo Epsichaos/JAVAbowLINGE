@@ -20,6 +20,9 @@ public class Game {
         return playerList.get(playerNumber);
     }
 
+    public List<Player> getPlayerList() {
+        return playerList;
+    }
     /*
     * Say if a score is valid or not
     * ------------------------------
@@ -56,6 +59,7 @@ public class Game {
     public void playFrame(Player player, int frameNumber) {
         int firstLaunchScore;
         int secondLaunchScore;
+        int userFrameNumber = frameNumber + 1;
 
         // initialisation
         firstLaunchScore = 0;
@@ -63,7 +67,7 @@ public class Game {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + frameNumber);
+        System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + userFrameNumber);
         System.out.println("-------------------------------------------");
 
         // first launch input
