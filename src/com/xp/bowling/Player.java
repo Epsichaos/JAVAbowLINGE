@@ -11,15 +11,9 @@ import com.xp.bowling.Frame;
 public class Player {
 
     // variables
-    /*
-    * Missing Private Variables :
-    * - Where storing the frames ? Tables / List<Int> ???
-    * - Where storing the first / seconds launches ?
-    */
     private String playerName;
     // --> List de frame ?
     // --> Une frame = (int, int)
-    //List<> frameList;
     List<Frame> frameList = new ArrayList<Frame>();
 
     // functions
