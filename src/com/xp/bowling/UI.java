@@ -7,7 +7,34 @@ import java.util.Scanner;
 /**
  * Created by epsichaos on 12/02/2016.
  */
-public class GameInterface {
+public class UI {
+    
+    public Frame playFrameInterface(Player player, int frameNumber) {
+        int firstLaunchScore;
+        int secondLaunchScore;
+        int userFrameNumber = frameNumber + 1;
+
+        // initialisation
+        firstLaunchScore = 0;
+        secondLaunchScore = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + userFrameNumber);
+        System.out.println("-------------------------------------------");
+
+        System.out.println(" > Rentrez votre score pour le premier lancer ...");
+        firstLaunchScore = sc.nextInt();
+
+        System.out.println("\n");
+        if(firstLaunchScore != 10) {
+            System.out.println(" > Rentrez votre score pour le second lancer ...");
+            secondLaunchScore = sc.nextInt();
+        }
+
+        Frame fr = new Frame(firstLaunchScore, secondLaunchScore);
+        return fr;
+    }
     /*
     * Menu Interface which allow player creation
     * Return the player list
