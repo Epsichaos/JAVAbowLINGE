@@ -16,6 +16,33 @@ public class FrameTest {
     }
 
     @Test
+    public void testFrameGetters1() {
+        Frame fr = new Frame(1,2);
+        assertTrue(fr.getFirstLaunch()==1);
+    }
+
+    @Test
+    public void testFrameGetters2() {
+        Frame fr = new Frame(1,2);
+        assertTrue(fr.getSecondLaunch()==2);
+    }
+
+    @Test
+    public void testFrameSetters1() {
+        Frame fr = new Frame(0,0);
+        fr.setFirstLaunch(1);
+        assertTrue(fr.getFirstLaunch()==1);
+        assertFalse(fr.getFirstLaunch()==3);
+    }
+
+    @Test
+    public void testFrameSetters2() {
+        Frame fr = new Frame(0,0);
+        fr.setSecondLaunch(1);
+        assertTrue(fr.getSecondLaunch()==1);
+    }
+
+    @Test
     public void testStrike() {
         Frame frStrike = new Frame(10,0);
         assertTrue(frStrike.isStrike());

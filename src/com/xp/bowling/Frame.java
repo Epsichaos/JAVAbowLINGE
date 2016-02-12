@@ -27,6 +27,7 @@ public class Frame {
         secondLaunch = secondL;
     }
 
+    // detect if a frame is a strike
     public Boolean isStrike() {
         if(firstLaunch == 10) {
             return true;
@@ -36,6 +37,7 @@ public class Frame {
         }
     }
 
+    // detect if a frame is a spare
     public Boolean isSpare() {
         if((firstLaunch + secondLaunch == 10)&& firstLaunch!=10) {
             return true;

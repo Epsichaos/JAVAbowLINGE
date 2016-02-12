@@ -3,8 +3,6 @@ package com.xp.bowling;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.xp.bowling.Frame;
-
 /**
  * Created by epsichaos on 04/02/2016.
  */
