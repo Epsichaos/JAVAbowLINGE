@@ -30,17 +30,34 @@ public class Game {
 
     public int getScoreFrame(Player player, int nbFrame) {
         int frameNumber = nbFrame - 1;
+        Frame nextFrame;
         int score = 0;
 
         Frame playerFrame = player.getFrameList().get(frameNumber);
+        // if the current frame is a strike
         if(playerFrame.isStrike()) {
-            return 0;
+            nextFrame = player.getFrameList().get(frameNumber + 1);
+            if(frameNumber<9) {
+                if(nextFrame.isStrike()) {
+                    score = playerFrame.getSum() + nextFrame.getSum() + player.getFrameList().get(frameNumber +2).getFirstLaunch();
+                    return score;
+                }
+                else {
+                    score = playerFrame.getSum() + nextFrame.getSum();
+                    return score;
+                }
+            }
         }
+        // if the current frame is a spare
         if(playerFrame.isSpare()) {
-            return 0;
+            nextFrame = player.getFrameList().get(frameNumber + 1);
+            score = playerFrame.getSum() + nextFrame.getFirstLaunch();
+            return score;
         }
+        // if the frame is not a strike or a spare
         else {
-            return playerFrame.getSum();
+            score = 2;
+            return score;
         }
     }
 
