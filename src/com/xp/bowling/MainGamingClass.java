@@ -1,5 +1,7 @@
 package com.xp.bowling;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.lang.Exception;
 import com.xp.bowling.Game;
@@ -17,8 +19,22 @@ public class MainGamingClass {
         int frame_number = 2;
 
         int i  = 0;
+        Game game = new Game();
+        game.playGame();
+        for (Player player : game.getPlayerList()) {
+            System.out.println(" - " + player.getPlayerName());
+        }
+        /*
         System.out.println("Hellow World");
-
+        Game game = new Game();
+        List<Player> PList;
+        //PList = new ArrayList<Player>();
+        PList = game.beginMenuInterface();
+        System.out.println("Les joueurs suivant jouent : ");
+        for (Player player : PList) {
+            System.out.println(" - " + player.getPlayerName());
+        }
+        System.out.println("\n");
         /*
         Game game = new Game();
         game.beginGame();
