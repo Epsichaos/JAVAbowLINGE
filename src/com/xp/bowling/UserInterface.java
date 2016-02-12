@@ -12,28 +12,55 @@ public class UserInterface {
     public Frame playFrameInterface(Player player, int frameNumber) {
         int firstLaunchScore;
         int secondLaunchScore;
+        int thirdLaunchScore;
         int userFrameNumber = frameNumber + 1;
+        Frame fr;
 
         // initialisation
         firstLaunchScore = 0;
         secondLaunchScore = 0;
+        thirdLaunchScore = 0;
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + userFrameNumber);
-        System.out.println("-------------------------------------------");
+        if(userFrameNumber != 10) {
+            System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + userFrameNumber);
+            System.out.println("-------------------------------------------");
 
-        System.out.println(" > Rentrez votre score pour le premier lancer ...");
-        firstLaunchScore = sc.nextInt();
+            System.out.println(" > Rentrez votre score pour le premier lancer ...");
+            firstLaunchScore = sc.nextInt();
 
-        System.out.println("\n");
-        if(firstLaunchScore != 10) {
+            System.out.println("\n");
+            if(firstLaunchScore != 10) {
+                System.out.println(" > Rentrez votre score pour le second lancer ...");
+                secondLaunchScore = sc.nextInt();
+            }
+
+            fr = new Frame(firstLaunchScore, secondLaunchScore);
+            return fr;
+        }
+        // this is the last frame
+        else {
+            System.out.println(" > Le joueur " + player.getPlayerName() + " joue la Frame " + userFrameNumber);
+            System.out.println("-------------------------------------------");
+
+            System.out.println(" > Rentrez votre score pour le premier lancer ...");
+            firstLaunchScore = sc.nextInt();
+
             System.out.println(" > Rentrez votre score pour le second lancer ...");
             secondLaunchScore = sc.nextInt();
-        }
 
-        Frame fr = new Frame(firstLaunchScore, secondLaunchScore);
-        return fr;
+            fr = new Frame(firstLaunchScore, secondLaunchScore);
+            if(fr.isStrike()||fr.isSpare()) {
+                System.out.println(" > Rentrez votre score pour le troisième lancer ...");
+                thirdLaunchScore = sc.nextInt();
+                fr.setThirdLaunch(thirdLaunchScore);
+                return fr;
+            }
+            else {
+                return fr;
+            }
+        }
     }
     /*
     * Menu Interface which allow player creation
@@ -102,7 +129,11 @@ public class UserInterface {
                     break;
             }
         }
-        // return player list
+        int i = 0;
+        for(Player p : PList) {
+            p.setPlayerNumber(i);
+            i++;
+        }
         return PList;
     }
 }

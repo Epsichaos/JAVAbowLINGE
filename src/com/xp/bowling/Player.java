@@ -28,11 +28,23 @@ public class Player {
         return playerName;
     }
 
+    public int getPlayerNumber() {
+        return playerNumber;
+    }
+
+    public void setPlayerNumber(int pNumber) {
+        playerNumber = pNumber;
+    }
+
     public List<Frame> getFrameList() {
         return frameList;
     }
 
     public void setFrame(int firstL, int secondL) {
         frameList.add(new Frame(firstL, secondL));
+    }
+
+    public void setFinalFrame(int firstL, int secondL, int thirdL) {
+        frameList.add(new Frame(firstL, secondL, thirdL));
     }
 }
