@@ -9,6 +9,7 @@ import java.util.Scanner;
  */
 public class UserInterface {
 
+    // display the playing frame interface
     public Frame playFrameInterface(Player player, int frameNumber) {
         int firstLaunchScore;
         int secondLaunchScore;
@@ -63,9 +64,9 @@ public class UserInterface {
         }
     }
     /*
-    * Menu Interface which allow player creation
+    * Display menu interface which allow player creation
     * Return the player list
-     */
+    */
     public List<Player> beginMenuInterface() {
         int options;
         String opt;
@@ -135,5 +136,17 @@ public class UserInterface {
             i++;
         }
         return PList;
+    }
+
+    // display scoreBoard
+    public void scoreBoard(List<Player> playerList) {
+        int playerNumber = 0;
+        System.out.println("\n");
+        System.out.println(">>> Fin de la partie <<<");
+        System.out.println("-------------------------");
+        for(Player p : playerList) {
+            playerNumber = p.getPlayerNumber()+1;
+            System.out.println(" - Joueur " + playerNumber + " : " + p.getPlayerName() + " -> " + p.getFinalScore() + " points...");
+        }
     }
 }

@@ -20,6 +20,10 @@ public class Game {
         playerList.add(pl);
     }
 
+    public void setFinalScore(Player p, int finalScore) {
+        p.setFinalScore(finalScore);
+    }
+
     public void launchFrame(int playerNumber, Frame fr) {
        playerList.get(playerNumber).setFrame(fr.getFirstLaunch(), fr.getSecondLaunch());
     }
@@ -119,16 +123,19 @@ public class Game {
         int i;
         for(i = 0; i<9; i++) {
             for(Player player : this.getPlayerList()) {
-                this.launchFrame(0,GameInter.playFrameInterface(player, i));
+                this.launchFrame(player.getPlayerNumber(),GameInter.playFrameInterface(player, i));
                 System.out.println("Score Frame : " + this.getScoreFrame(playerList.get(player.getPlayerNumber()), i+1));
                 System.out.println("Score : " + this.getTotalScore(playerList.get(player.getPlayerNumber())));
             }
         }
         // last frame
         for(Player player : this.getPlayerList()) {
-            this.launchFinalFrame(0,GameInter.playFrameInterface(player, 9));
+            this.launchFinalFrame(player.getPlayerNumber(),GameInter.playFrameInterface(player, 9));
             System.out.println("Score Frame : " + this.getScoreFrame(playerList.get(player.getPlayerNumber()), 10));
             System.out.println("Score : " + this.getTotalScore(playerList.get(player.getPlayerNumber())));
+            this.setFinalScore(playerList.get(player.getPlayerNumber()), this.getTotalScore(playerList.get(player.getPlayerNumber())));
         }
+
+        GameInter.scoreBoard(playerList);
     }
 }

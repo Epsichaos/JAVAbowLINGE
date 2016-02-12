@@ -11,11 +11,13 @@ public class Player {
     // variables
     private String playerName;
     private int playerNumber;
-    // --> List de frame ?
-    // --> Une frame = (int, int)
     List<Frame> frameList = new ArrayList<Frame>();
+    // where the final score is stored at the end of the game
+    private int finalScore;
+
 
     // functions
+
     // constructor
     public Player(String name) {
         playerName = name;
@@ -34,6 +36,14 @@ public class Player {
 
     public void setPlayerNumber(int pNumber) {
         playerNumber = pNumber;
+    }
+
+    public int getFinalScore() {
+        return finalScore;
+    }
+
+    public void setFinalScore(int fScore) {
+        finalScore = fScore;
     }
 
     public List<Frame> getFrameList() {
