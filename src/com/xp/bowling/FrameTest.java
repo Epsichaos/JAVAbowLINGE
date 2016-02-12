@@ -54,4 +54,12 @@ public class FrameTest {
         Frame frSpare2 = new Frame(0,10);
         assertTrue(frSpare1.isSpare() && frSpare2.isSpare());
     }
+
+    @Test
+    public void testIsValid() {
+        Frame frTrue1 = new Frame(1,5);
+        Frame frFalse1 = new Frame(5,6);
+        assertTrue(frTrue1.isValid());
+        assertFalse(frFalse1.isValid());
+    }
 }

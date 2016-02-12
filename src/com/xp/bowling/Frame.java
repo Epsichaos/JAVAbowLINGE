@@ -27,6 +27,19 @@ public class Frame {
         secondLaunch = secondL;
     }
 
+    // say if a frame isValid or not
+    public Boolean isValid() {
+        int score1 = this.getFirstLaunch();
+        int score2 = this.getSecondLaunch();
+        int score = score1 + score2;
+        if ((score1<0)||(score1>10)||(score2<0)||(score2>10)||(score<0)||(score>10)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     // detect if a frame is a strike
     public Boolean isStrike() {
         if(firstLaunch == 10) {

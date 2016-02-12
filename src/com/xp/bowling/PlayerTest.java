@@ -20,6 +20,15 @@ public class PlayerTest {
         assertTrue(p1.getPlayerName()=="toto");
     }
 
+    //testing player name setting
+    @Test
+    public void testPlayerNameSetter() {
+        Player p1;
+        p1 = new Player("toto");
+        p1.setPlayerName("tata");
+        assertTrue(p1.getPlayerName()=="tata");
+    }
+
     //testing frame creation
     @Test
     public void testFrame() {

@@ -19,6 +19,7 @@ public class MainGamingClass {
         int i  = 0;
         System.out.println("Hellow World");
 
+        /*
         Game game = new Game();
         game.beginGame();
 
@@ -31,5 +32,6 @@ public class MainGamingClass {
         }
 
         System.out.println("Score :" +  game.getScore(game.getPlayer(0)));
+        */
     }
 }

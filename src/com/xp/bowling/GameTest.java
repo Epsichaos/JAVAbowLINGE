@@ -1,4 +1,7 @@
 package com.xp.bowling;
+import com.xp.bowling.Game;
+
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -7,4 +10,8 @@ import static org.junit.Assert.*;
  */
 public class GameTest {
 
+    @Test
+    public void getScoreTest() {
+
+    }
 }

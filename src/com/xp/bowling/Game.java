@@ -24,47 +24,22 @@ public class Game {
     public List<Player> getPlayerList() {
         return playerList;
     }
-    /*
-    * Say if a score is valid or not
-    * ------------------------------
-    * A score is valid if it's in the range 0-10
-    *
-    */
-    public boolean isValid(int score) {
-        if(score < 0 || score > 10) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-
-    public boolean isValid(int score1, int score2) {
-        int temp = score1 + score2;
-        if(temp < 0 || temp > 10) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
 
     public int getScore(Player player) {
         int i = 0;
         int score = 0;
+
         Frame previousFrame = new Frame(0,0);
         List<Frame> frameList = player.getFrameList();
 
         //f frame.getFirstLaunch() == 10 isStrike = true
-        /*
         for(Frame frame : player.getFrameList()) {
             score = score + frame.getFirstLaunch() + frame.getSecondLaunch();
 
         }
-        */
         return score;
     }
-
+/*
     public void playFrame(Player player, int frameNumber) {
         int firstLaunchScore;
         int secondLaunchScore;
@@ -177,4 +152,5 @@ public class Game {
         System.out.println("\n");
         return res;
     }
+*/
 }
