@@ -107,7 +107,6 @@ public class UserInterface {
                 // On sort
                 case 0:
                     System.out.println(" > Abandon de la partie ...");
-                    res = false;
                     end_while = true;
                     break;
                 // On créé un nouveau joueur
@@ -121,7 +120,6 @@ public class UserInterface {
                 // commencer la partie
                 case 2:
                     System.out.println(" > Lancement de la partie ...\n");
-                    res = true;
                     end_while = true;
                     // default cases
                     break;

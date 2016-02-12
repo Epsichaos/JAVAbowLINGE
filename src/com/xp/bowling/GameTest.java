@@ -119,20 +119,20 @@ public class GameTest {
     }
 
     @Test
-    public void getFrameScore9nthFrameTest() {
+    public void getFrameScoreFinalTest() {
         Game game = new Game();
         Player p = new Player("test");
         game.setPlayer(p);
-        Frame fr1 = new Frame(0,0);
-        Frame fr2 = new Frame(0, 0);
-        Frame fr3 = new Frame(0, 0);
-        Frame fr4 = new Frame(0, 0);
-        Frame fr5 = new Frame(0, 0);
-        Frame fr6 = new Frame(0, 0);
-        Frame fr7 = new Frame(0, 0);
-        Frame fr8 = new Frame(0, 0);
-        Frame fr9 = new Frame(10, 0);
-        Frame fr10 = new Frame(5, 1);
+        Frame fr1 = new Frame(1,2);
+        Frame fr2 = new Frame(10, 0);
+        Frame fr3 = new Frame(7, 3);
+        Frame fr4 = new Frame(4, 2);
+        Frame fr5 = new Frame(2, 8);
+        Frame fr6 = new Frame(6, 2);
+        Frame fr7 = new Frame(2, 8);
+        Frame fr8 = new Frame(2, 8);
+        Frame fr9 = new Frame(8, 2);
+        Frame fr10 = new Frame(6, 4, 8);
         game.launchFrame(0, fr1);
         game.launchFrame(0, fr2);
         game.launchFrame(0, fr3);
@@ -142,7 +142,7 @@ public class GameTest {
         game.launchFrame(0, fr7);
         game.launchFrame(0, fr8);
         game.launchFrame(0, fr9);
-        game.launchFrame(0, fr10);
-        assertTrue(game.getScoreFrame(game.getPlayer(0), 9) == 16);
+        game.launchFinalFrame(0, fr10);
+        assertTrue(game.getTotalScore(game.getPlayer(0)) == 131);
     }
 }
