@@ -36,7 +36,7 @@ public class Game {
     }
 
     public void playGame() {
-        UI GameInter = new UI();
+        UserInterface GameInter = new UserInterface();
         playerList = GameInter.beginMenuInterface();
     }
 }

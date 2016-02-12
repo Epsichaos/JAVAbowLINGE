@@ -7,8 +7,8 @@ import java.util.Scanner;
 /**
  * Created by epsichaos on 12/02/2016.
  */
-public class UI {
-    
+public class UserInterface {
+
     public Frame playFrameInterface(Player player, int frameNumber) {
         int firstLaunchScore;
         int secondLaunchScore;
