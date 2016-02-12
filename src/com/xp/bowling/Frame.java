@@ -27,6 +27,10 @@ public class Frame {
         secondLaunch = secondL;
     }
 
+    public int getSum() {
+        return firstLaunch + secondLaunch;
+    }
+
     // say if a frame isValid or not
     public Boolean isValid() {
         int score1 = this.getFirstLaunch();

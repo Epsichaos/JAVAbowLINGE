@@ -16,8 +16,32 @@ public class Game {
         return playerList.get(playerNumber);
     }
 
+    public void setPlayer(Player pl) {
+        playerList.add(pl);
+    }
+
+    public void launchFrame(int playerNumber, Frame fr) {
+       playerList.get(playerNumber).setFrame(fr.getFirstLaunch(), fr.getSecondLaunch());
+    }
+
     public List<Player> getPlayerList() {
         return playerList;
+    }
+
+    public int getScoreFrame(Player player, int nbFrame) {
+        int frameNumber = nbFrame - 1;
+        int score = 0;
+
+        Frame playerFrame = player.getFrameList().get(frameNumber);
+        if(playerFrame.isStrike()) {
+            return 0;
+        }
+        if(playerFrame.isSpare()) {
+            return 0;
+        }
+        else {
+            return playerFrame.getSum();
+        }
     }
 
     public int getScore(Player player) {

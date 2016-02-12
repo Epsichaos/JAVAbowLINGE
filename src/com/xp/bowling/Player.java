@@ -10,6 +10,7 @@ public class Player {
 
     // variables
     private String playerName;
+    private int playerNumber;
     // --> List de frame ?
     // --> Une frame = (int, int)
     List<Frame> frameList = new ArrayList<Frame>();

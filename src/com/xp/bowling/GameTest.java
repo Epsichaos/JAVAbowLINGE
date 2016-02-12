@@ -11,7 +11,13 @@ import static org.junit.Assert.*;
 public class GameTest {
 
     @Test
-    public void getScoreTest() {
+    public void getScoreFrameTest() {
+        Game game = new Game();
+        Player p = new Player("test");
+        game.setPlayer(p);
+        Frame fr = new Frame(1,1);
+        game.launchFrame(0, fr);
+        assertTrue(game.getScoreFrame(game.getPlayer(0), 1) == 2);
 
     }
 }

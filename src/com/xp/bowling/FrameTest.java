@@ -62,4 +62,10 @@ public class FrameTest {
         assertTrue(frTrue1.isValid());
         assertFalse(frFalse1.isValid());
     }
+
+    @Test
+    public void testSum() {
+        Frame fr = new Frame(1,2);
+        assertTrue(fr.getSum()==3);
+    }
 }
