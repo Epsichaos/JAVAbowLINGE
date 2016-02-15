@@ -11,6 +11,15 @@ import static org.junit.Assert.*;
 public class GameTest {
 
     @Test
+    public void setFinalScoreTest() {
+        Game game = new Game();
+        Player p = new Player("test");
+        game.setPlayer(p);
+        game.setFinalScore(game.getPlayerList().get(0),1);
+        assertTrue(game.getPlayerList().get(0).getFinalScore()==1);
+    }
+
+    @Test
     public void getScoreBasicFrameTest() {
         Game game = new Game();
         Player p = new Player("test");
@@ -144,5 +153,33 @@ public class GameTest {
         game.launchFrame(0, fr9);
         game.launchFinalFrame(0, fr10);
         assertTrue(game.getTotalScore(game.getPlayer(0)) == 131);
+    }
+
+    @Test
+    public void getFrameScoreStrikeBeforeLastTest() {
+        Game game = new Game();
+        Player p = new Player("test");
+        game.setPlayer(p);
+        Frame fr1 = new Frame(0,0);
+        Frame fr2 = new Frame(0, 0);
+        Frame fr3 = new Frame(0, 0);
+        Frame fr4 = new Frame(0, 0);
+        Frame fr5 = new Frame(0, 0);
+        Frame fr6 = new Frame(0, 0);
+        Frame fr7 = new Frame(0, 0);
+        Frame fr8 = new Frame(0, 0);
+        Frame fr9 = new Frame(10, 0);
+        Frame fr10 = new Frame(10, 1, 0);
+        game.launchFrame(0, fr1);
+        game.launchFrame(0, fr2);
+        game.launchFrame(0, fr3);
+        game.launchFrame(0, fr4);
+        game.launchFrame(0, fr5);
+        game.launchFrame(0, fr6);
+        game.launchFrame(0, fr7);
+        game.launchFrame(0, fr8);
+        game.launchFrame(0, fr9);
+        game.launchFinalFrame(0, fr10);
+        assertTrue(game.getTotalScore(game.getPlayer(0)) == 32);
     }
 }

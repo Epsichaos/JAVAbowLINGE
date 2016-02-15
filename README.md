@@ -16,7 +16,7 @@ User Stories
 - [4] En tant que joueur, je peux voir qui dois jouer.
 - [6] En tant que joueur, je peux préciser le nombre de joueurs.
 - [7] En tant que joueur, je peux nommer les joueurs.
-- [10] En tant que joueur, je peux terminer la partie.
+- [10] En tant que joueur, je peux terminer la partie [inutile].
 - [8] En tant que joueur, je peux effectuer 2 lancers.
 - [13] En tant que joueur, je peux augmenter le score du tour suivant en faisant un spare.
 - [12] En tant que joueur, je peux terminer mon tour au premier lancer en faisant un strike.
@@ -47,12 +47,12 @@ On priorise toutes les story prises en compte sur une échelle de 1 à 100.
 |      2       |       95      | En tant que joueur, je peux saisir mon score. |
 |      3       |       55      | En tant que joueur, je peux consulter mon score. |
 |      4       |       85      | En tant que joueur, je peux voir qui dois jouer. |
-|      5       |       40      | En tant que spectateur, je peux voir les scores de tous les joueurs -> inutile |
+|      5       |       40      | En tant que spectateur, je peux voir les scores de tous les joueurs |
 |      6       |       80      | En tant que joueur, je peux préciser le nombre de joueurs. |
 |      7       |       50      | En tant que joueur, je peux nommer les joueurs. |
 |      8       |       75      | En tant que joueur, je peux effectuer 2 lancers. |
 |      9       |       30      | En tant que joueur, je peux augmenter le score des 2 tours suivants en faisant en strike.|
-|     10       |       45      | En tant que joueur, je peux terminer la partie. |
+|     10       |       45      | En tant que joueur, je peux terminer la partie. [inutile]|
 |     11       |       70      | En tant que joueur, je ne peux pas faire tomber plus de 10 quilles. |
 |     12       |       35      | En tant que joueur, je peux terminer mon tour au premier lancer en faisant un strike. |
 |     13       |       37      | En tant que joueur, je peux augmenter le score du tour suivant en faisant un spare. |
@@ -81,3 +81,14 @@ Ci-dessous l'estimation de la charge de travail en heures par story, classées p
 |      9       |       0.5     |
 |     14       |       0.5     |
 |     15       |       0.25    |
+
+Coverage
+--------
+
+Ci-dessous, la couverture de nos classes de test. Dans certains cas, celle-ci est faible à cause du grand nombre de getters et de setters dans la classe testée.
+
+| Classe de test | Couverture méthode | Couverture Ligne | Commentaires |
+| :---: | :---: | :---: | :---: |
+| GameTest | 88% | 95% | x |
+| PlayerTest | 50% | 55% | Beaucoup de setters et de getters |
+| FrameTest | 83% | 58% | Beaucoup de setters et de getters |

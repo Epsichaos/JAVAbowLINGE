@@ -25,7 +25,7 @@ public class Game {
     }
 
     public void launchFrame(int playerNumber, Frame fr) {
-       playerList.get(playerNumber).setFrame(fr.getFirstLaunch(), fr.getSecondLaunch());
+        playerList.get(playerNumber).setFrame(fr.getFirstLaunch(), fr.getSecondLaunch());
     }
 
     public void launchFinalFrame(int playerNumber, Frame fr) {
@@ -34,6 +34,10 @@ public class Game {
 
     public List<Player> getPlayerList() {
         return playerList;
+    }
+
+    public void setPlayerList(List<Player> PlaList) {
+        playerList = PlaList;
     }
 
     // get the score for the frame number `nbFrame of Player player
@@ -46,42 +50,37 @@ public class Game {
 
         Frame playerFrame = player.getFrameList().get(frameNumber);
 
-        if(nbFrame!=10) {
+        if (nbFrame != 10) {
             // if the current frame is a strike
-            if(playerFrame.isStrike()) {
-                if(nbFrame == playerFrameListSize) {
+            if (playerFrame.isStrike()) {
+                if (nbFrame == playerFrameListSize) {
                     return 0;
-                }
-                else {
+                } else {
                     nextFrame = player.getFrameList().get(frameNumber + 1);
                     // 2 strikes in a row
-                    if(nextFrame.isStrike()) {
-                        if((nbFrame == playerFrameListSize - 1) && (nbFrame!=9)) {
+                    if (nextFrame.isStrike()) {
+                        if ((nbFrame == playerFrameListSize - 1) && (nbFrame != 9)) {
                             return 0;
-                        }
-                        else {
-                            if(nbFrame == 9) {
+                        } else {
+                            if (nbFrame == 9) {
                                 score = playerFrame.getSum() + nextFrame.getFirstLaunch() + nextFrame.getSecondLaunch();
                                 return score;
-                            }
-                            else {
+                            } else {
                                 score = playerFrame.getSum() + nextFrame.getSum() + player.getFrameList().get(frameNumber + 2).getFirstLaunch();
                                 return score;
                             }
                         }
-                    }
-                    else {
+                    } else {
                         score = playerFrame.getSum() + nextFrame.getSum();
                         return score;
                     }
                 }
             }
             // if the current frame is a spare
-            if(playerFrame.isSpare()) {
-                if(nbFrame == playerFrameListSize) {
+            if (playerFrame.isSpare()) {
+                if (nbFrame == playerFrameListSize) {
                     return 0;
-                }
-                else {
+                } else {
                     nextFrame = player.getFrameList().get(frameNumber + 1);
                     score = playerFrame.getSum() + nextFrame.getFirstLaunch();
                     return score;
@@ -105,37 +104,9 @@ public class Game {
         int i;
         int score = 0;
         int end = player.getFrameList().size() + 1;
-        for (i=1; i<end; i++) {
+        for (i = 1; i < end; i++) {
             score = score + getScoreFrame(player, i);
         }
         return score;
-    }
-
-    public void playGame() {
-        UserInterface GameInter = new UserInterface();
-        playerList = GameInter.beginMenuInterface();
-        System.out.println("Les joueurs suivant jouent au Bowling : ");
-        int playerNumber = 0;
-        for(Player p : playerList) {
-            playerNumber = p.getPlayerNumber() + 1;
-            System.out.println(" - Joueur " + playerNumber + " : " + p.getPlayerName());
-        }
-        int i;
-        for(i = 0; i<9; i++) {
-            for(Player player : this.getPlayerList()) {
-                this.launchFrame(player.getPlayerNumber(),GameInter.playFrameInterface(player, i));
-                System.out.println("Score Frame : " + this.getScoreFrame(playerList.get(player.getPlayerNumber()), i+1));
-                System.out.println("Score : " + this.getTotalScore(playerList.get(player.getPlayerNumber())));
-            }
-        }
-        // last frame
-        for(Player player : this.getPlayerList()) {
-            this.launchFinalFrame(player.getPlayerNumber(),GameInter.playFrameInterface(player, 9));
-            System.out.println("Score Frame : " + this.getScoreFrame(playerList.get(player.getPlayerNumber()), 10));
-            System.out.println("Score : " + this.getTotalScore(playerList.get(player.getPlayerNumber())));
-            this.setFinalScore(playerList.get(player.getPlayerNumber()), this.getTotalScore(playerList.get(player.getPlayerNumber())));
-        }
-
-        GameInter.scoreBoard(playerList);
     }
 }

@@ -97,18 +97,12 @@ public class UserInterface {
             System.out.println("---------------------------");
             System.out.println("1 : Ajouter un joueur");
             System.out.println("2 : Commencer la partie");
-            System.out.println("0 : Quitter le menu et abandonner");
             System.out.println("---------------------------");
 
             opt = sc.nextLine();
             options = Integer.parseInt(opt);
 
             switch (options) {
-                // On sort
-                case 0:
-                    System.out.println(" > Abandon de la partie ...");
-                    end_while = true;
-                    break;
                 // On créé un nouveau joueur
                 case 1:
                     System.out.println(" > Création d'un nouveau joueur ...");
@@ -146,5 +140,44 @@ public class UserInterface {
             playerNumber = p.getPlayerNumber()+1;
             System.out.println(" - Joueur " + playerNumber + " : " + p.getPlayerName() + " -> " + p.getFinalScore() + " points...");
         }
+    }
+
+    public List<Player> playGame(List<Player> playerList) {
+        Game game = new Game();
+        game.setPlayerList(playerList);
+        System.out.println("Les joueurs suivant jouent au Bowling : ");
+        int playerNumber = 0;
+        for(Player p : playerList) {
+            playerNumber = p.getPlayerNumber() + 1;
+            System.out.println(" - Joueur " + playerNumber + " : " + p.getPlayerName());
+        }
+        int i;
+        Frame fr;
+        for(i = 0; i<9; i++) {
+            for(Player player : game.getPlayerList()) {
+                fr = this.playFrameInterface(player, i);
+                while(!fr.isValid()) {
+                    System.out.println("Erreur de saisie de la frame, merci de recommencer");
+                    fr = this.playFrameInterface(player, i);
+                }
+                game.launchFrame(player.getPlayerNumber(),fr);
+                System.out.println("Score Frame : " + game.getScoreFrame(playerList.get(player.getPlayerNumber()), i+1));
+                System.out.println("Score : " + game.getTotalScore(playerList.get(player.getPlayerNumber())));
+            }
+        }
+        // last frame
+        for(Player player : game.getPlayerList()) {
+            fr = this.playFrameInterface(player, i);
+            while(!fr.isValid()) {
+                System.out.println("Erreur de saisie de la frame, merci de recommencer");
+                fr = this.playFrameInterface(player, i);
+            }
+            game.launchFinalFrame(player.getPlayerNumber(),fr);
+            System.out.println("Score Frame : " + game.getScoreFrame(playerList.get(player.getPlayerNumber()), 10));
+            System.out.println("Score : " + game.getTotalScore(playerList.get(player.getPlayerNumber())));
+            game.setFinalScore(playerList.get(player.getPlayerNumber()), game.getTotalScore(playerList.get(player.getPlayerNumber())));
+        }
+
+        return game.getPlayerList();
     }
 }
